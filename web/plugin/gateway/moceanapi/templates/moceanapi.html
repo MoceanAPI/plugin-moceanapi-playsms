@@ -1,0 +1,23 @@
+{{ DIALOG_DISPLAY }}
+<h2>{{ Manage MoceanAPI }}</h2>
+<form action="index.php?app=main&inc=gateway_moceanapi&op=manage_save" method=post>
+{{ CSRF_FORM }}
+<table class=playsms-table>
+	<tbody>
+		<tr><td class=label-sizer>{{ Gateway name }}</td><td>MoceanAPI</td></tr>
+		<tr><td>{{ APIKey }}</td><td><input type=text maxlength=30 name=up_apikey value="{{ moceanapi_param_apikey }}"> {{ HINT_API_KEY }}</td></tr>
+		<tr><td>{{ APISecret }}</td><td><input type=text maxlength=30 name=up_apikey value="{{ moceanapi_param_apikey }}"> {{ HINT_API_SECRET }}</td></tr>
+		<tr><td>{{ Module sender ID }}</td><td><input type=text maxlength=16 name=up_module_sender value="{{ moceanapi_param_module_sender }}"> {{ HINT_MODULE_SENDER }}</td></tr>
+		<tr><td>{{ Module timezone }}</td><td><input type=text size=5 maxlength=5 name=up_datetime_timezone value="{{ moceanapi_param_datetime_timezone }}"> {{ HINT_TIMEZONE }}</td></tr>
+	</tbody>
+</table>
+<p><input type=submit class=button value="{{ Save }}">
+</form>
+<br />
+{{ Notes }}:<br />
+- {{ MoceanAPI_SIGN_UP }} <a href="https://moceanapi.com" target="_blank">MoceanAPI</a><br />
+- {{ CALLBACK_URL_IS }} <u><em>{{ callback_url }}</em></u><br />
+- {{ CALLBACK_URL_ACCESSIBLE }}<br />
+- {{ MoceanAPI_PUSH_DLR }}<br />
+- {{ MoceanAPI_IS_BULK }}, <a href="https://MoceanAPI" target="_blank">{{ MoceanAPI_FREE_CREDIT }}</a><br /><br />
+{{ BUTTON_BACK }}
